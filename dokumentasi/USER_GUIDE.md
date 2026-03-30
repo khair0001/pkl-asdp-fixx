@@ -52,7 +52,7 @@ Dashboard menampilkan ringkasan operasional:
 
 ### Grafik Pendapatan Bulanan
 
-Menampilkan tren pendapatan per bulan dalam bentuk chart.
+Menampilkan tren pendapatan per bulan dalam bentuk grafik batang.
 
 ### Filter Data
 
@@ -69,8 +69,9 @@ Mengelola data perusahaan penyeberangan.
 1. Klik menu "Master Data" → "Perusahaan"
 2. Klik tombol "+ Tambah Perusahaan"
 3. Isi form:
-	- Nama Perusahaan (wajib)
-	- statusnya aktif atau tidak (jika tidak aktif maka tidak akan di tampilkan produksi)
+   - Nama Perusahaan (wajib)
+   - Status (aktif dan tidak aktif (yang ditampilkan hanya yang aktif))
+4. 
 4. Klik "Simpan"
 
 #### Edit Perusahaan
@@ -99,8 +100,8 @@ Mengelola data kapal.
    - Perusahaan (pilih dari dropdown)
    - Kapasitas Penumpang
    - Kapasitas Kendaraan
-   - GT
-1. Klik "Simpan"
+   - GT (Gross Tonnage)
+4. Klik "Simpan"
 
 #### Filter Kapal
 
@@ -115,6 +116,7 @@ Mengelola data pelabuhan.
 1. Klik menu "Master Data" → "Pelabuhan"
 2. Klik tombol "+ Tambah Pelabuhan"
 3. Isi form:
+   - Kode Pelabuhan (contoh: MRK, BKH)
    - Nama Pelabuhan
    - Lokasi
 4. Klik "Simpan"
@@ -170,23 +172,35 @@ Mengatur kapal yang beroperasi di rute tertentu.
 2. Pilih Rute dari dropdown
 3. Klik "+ Tambah Kapal"
 4. Pilih kapal dari dropdown
-5. Atur urutan (menyesuaikan)
+5. Atur urutan (opsional)
 6. Klik "Simpan"
+
+#### Bulk Add Kapal
+
+1. Klik "Bulk Add"
+2. Pilih multiple kapal dengan checkbox
+3. Klik "Tambah Semua"
+
+#### Atur Urutan Kapal
+
+1. Drag & drop baris kapal untuk mengubah urutan
+2. Atau edit urutan manual
+3. Klik "Simpan Urutan"
 
 ### 7. Surat Dokumen
 
 Mengelola dokumen operasional.
 
-#### Edit Surat Dokumen
+#### Tambah Surat Dokumen
 
 1. Klik menu "Master Data" → "Surat Dokumen"
-2. Isi form:
-	- Nomor Dokument
-	- Revisi
-	- halaman
-	- GM
-	- MU
-3. Klik "Simpan"
+2. Klik "+ Tambah Surat"
+3. Isi form:
+   - Nomor Surat
+   - Tanggal Surat
+   - Perihal
+   - Status (Aktif/Non-aktif)
+4. Klik "Simpan"
 
 ## Input Produksi
 
@@ -196,29 +210,54 @@ Fitur untuk input data produksi harian.
 
 #### Step 1: Pilih Kapal & Rute
 
-1. Klik menu "Produksi" atau navbar→ "Input Produksi"
+1. Klik menu "Produksi" → "Input Produksi"
 2. Pilih Tanggal
 3. Pilih Kapal dari dropdown
 4. Pilih Rute dari dropdown
-5. Shift
-6. Regu
-7. Tanggal berapa trip itu
+5. Masukkan jumlah Trip
+6. Pilih Surat Dokumen (opsional)
+7. Klik "Lanjut"
 
 #### Step 2: Input Data Penumpang
 
 1. Untuk setiap kategori penumpang:
-	- Masukkan jumlah penumpang
-	- Tarif akan otomatis terisi (dari master tarif)
-	- Subtotal akan otomatis terhitung
-2. +penumpang untuk tarif yang berbeda (bisa dari diskon)
+   - Masukkan jumlah penumpang
+   - Tarif akan otomatis terisi (dari master tarif)
+   - Subtotal akan otomatis terhitung
+2. Klik "Lanjut"
+
+**Kategori Penumpang:**
+- Dewasa
+- Anak (3-12 tahun)
+- Bayi (0-2 tahun)
+- Lansia
+- Pelajar/Mahasiswa
 
 #### Step 3: Input Data Kendaraan
 
 1. Untuk setiap golongan kendaraan:
-	- Masukkan jumlah kendaraan
-	- Tarif akan otomatis terisi
-	- Subtotal akan otomatis terhitung
-2. +kendaraan untuk tarif yang berbeda (bisa dari diskon)
+   - Masukkan jumlah kendaraan
+   - Tarif akan otomatis terisi
+   - Subtotal akan otomatis terhitung
+2. Review total pendapatan
+3. Klik "Simpan"
+
+**Golongan Kendaraan:**
+- Golongan I: Sepeda motor
+- Golongan II: Mobil sedan
+- Golongan III: Mobil pick-up
+- Golongan IV: Mobil box/minibus
+- Golongan V: Bus kecil
+- Golongan VI: Bus besar
+- Golongan VII: Truk kecil
+- Golongan VIII: Truk besar
+
+### Tips Input Produksi
+
+- Pastikan tarif sudah diatur di Master Data sebelum input produksi
+- Jika tarif tidak muncul, cek master tarif untuk rute tersebut
+- Data bisa diedit setelah disimpan
+- Gunakan tombol "Kembali" untuk revisi data sebelumnya
 
 ## Data Produksi
 
@@ -226,17 +265,13 @@ Melihat dan mengelola data produksi yang sudah diinput.
 
 ### Filter Data
 
-1. Klik menu "Produksi" atau navbar→ "Data Produksi"
+1. Klik menu "Produksi" → "Data Produksi"
 2. Gunakan filter:
-	- Tanggal Mulai
-	- Tanggal Akhir
-	- perusahaan (opsional)
-	- Kapal (opsional)
-	- Rute (opsional)
-	- shift (opsiaonal)
-	- regu (opsional)
-	- pelabuhan asal (opsional)
-3. Klik cari untuk menampilkan datanya ()
+   - Tanggal Mulai
+   - Tanggal Akhir
+   - Kapal (opsional)
+   - Rute (opsional)
+3. Klik "Filter"
 
 ### Lihat Detail Produksi
 
@@ -264,7 +299,7 @@ Melihat dan mengelola data produksi yang sudah diinput.
 
 #### Export ke Excel
 
-1. Set filter tanggal untuk menhgatur data yang akan diexport (hanay akan berdasarkan tanggal saja)
+1. Set filter sesuai kebutuhan
 2. Klik tombol "Export Excel"
 3. File Excel akan otomatis terdownload
 
@@ -277,9 +312,8 @@ Melihat dan mengelola data produksi yang sudah diinput.
 #### Export Laporan Kinerja ASDP
 
 1. Set filter periode
-2. pilih rute yang mau didownload
-3. Klik tombol "Export Kinerja ASDP"
-4. File Excel dengan format laporan akan terdownload 
+2. Klik tombol "Export Kinerja ASDP"
+3. File Excel dengan format laporan resmi akan terdownload
 
 ## Manajemen User
 
@@ -307,10 +341,37 @@ Melihat dan mengelola data produksi yang sudah diinput.
 
 1. Klik icon tempat sampah (🗑️) pada baris user
 2. Konfirmasi penghapusan
+
+**Catatan**: User yang sedang login tidak bisa dihapus.
+
+### Reset Password User
+
+1. Edit user
+2. Masukkan password baru
+3. Klik "Simpan"
+4. Informasikan password baru ke user
+
+## Tips & Trik
+
+### Keyboard Shortcuts
+
+- `Ctrl + S`: Simpan form (jika ada form aktif)
+- `Esc`: Tutup modal
+- `Tab`: Navigasi antar field
+
 ### Best Practices
 
 #### Input Data
-1. **Backup**: Export data secara berkala
+
+1. **Konsistensi**: Gunakan format yang sama untuk semua data
+2. **Validasi**: Cek data sebelum simpan
+3. **Backup**: Export data secara berkala
+
+#### Master Data
+
+1. **Setup Awal**: Lengkapi semua master data sebelum input produksi
+2. **Tarif**: Update tarif saat ada perubahan kebijakan
+3. **Template Kapal-Rute**: Atur kapal per rute untuk mempermudah input
 
 #### Produksi
 
@@ -318,5 +379,41 @@ Melihat dan mengelola data produksi yang sudah diinput.
 2. **Review**: Cek data produksi secara berkala
 3. **Export**: Export laporan bulanan untuk arsip
 
+### Troubleshooting
+
+#### Data tidak muncul
+
+- Cek filter yang digunakan
+- Refresh halaman (F5)
+- Logout dan login kembali
+
+#### Error saat simpan
+
+- Cek koneksi internet
+- Pastikan semua field wajib terisi
+- Cek format data (angka, tanggal, dll)
+
+#### Tarif tidak muncul saat input produksi
+
+- Pastikan tarif sudah diatur di Master Data untuk rute tersebut
+- Cek kategori penumpang dan golongan kendaraan
+
+#### Tidak bisa hapus data
+
+- Cek apakah data memiliki relasi dengan data lain
+- Contoh: Perusahaan yang memiliki kapal tidak bisa dihapus
+
+### Kontak Support
+
+Jika mengalami masalah:
+
+1. Cek dokumentasi ini terlebih dahulu
+2. Hubungi administrator sistem
+3. Laporkan bug atau error dengan detail:
+   - Screenshot error
+   - Langkah yang dilakukan
+   - Browser yang digunakan
+
 ---
-**terima kasih**
+
+**Selamat menggunakan Sistem ASDP! 🚢**

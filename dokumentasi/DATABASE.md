@@ -1,10 +1,10 @@
 # Database Documentation
 
-Dokumentasi lengkap struktur database Sistem Informasi ASDP.
+Dokumentasi struktur database Sistem Informasi ASDP.
 
 ## Database Information
 
-- **Database Name**: `db_kapal`
+- **Database Name**: `db_kapal` (menyesuaikan dengan yang ada di env)
 - **DBMS**: MySQL 8.0+
 - **Charset**: utf8mb4
 - **Collation**: utf8mb4_unicode_ci
@@ -90,7 +90,7 @@ CREATE TABLE kapal (
 
 **Columns:**
 - `id`: Primary key
-- `nama`: Nama kapal (contoh: KMP Legundi)
+- `nama`: Nama kapal (contoh: KMP Rodhita)
 - `perusahaan_id`: Foreign key ke tabel perusahaan
 - `kapasitas_penumpang`: Kapasitas maksimal penumpang
 - `kapasitas_kendaraan`: Kapasitas maksimal kendaraan
