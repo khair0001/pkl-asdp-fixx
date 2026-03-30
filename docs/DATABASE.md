@@ -9,47 +9,6 @@ Dokumentasi lengkap struktur database Sistem Informasi ASDP.
 - **Charset**: utf8mb4
 - **Collation**: utf8mb4_unicode_ci
 
-## Entity Relationship Diagram (ERD)
-
-```
-┌─────────────┐         ┌──────────────┐         ┌─────────────┐
-│ Perusahaan  │────────<│    Kapal     │>────────│  Produksi   │
-└─────────────┘         └──────────────┘         └─────────────┘
-                              │                         │
-                              │                         │
-                              ▼                         ▼
-                    ┌──────────────────┐      ┌──────────────────┐
-                    │ Template_Kapal_  │      │ Produksi_        │
-                    │      Rute        │      │   Penumpang      │
-                    └──────────────────┘      └──────────────────┘
-                              │                         │
-                              │                         │
-┌─────────────┐         ┌─────────┐                    │
-│ Pelabuhan   │────────<│  Rute   │>───────────────────┘
-│   (Asal)    │         └─────────┘
-└─────────────┘               │
-                              │
-┌─────────────┐               │              ┌──────────────────┐
-│ Pelabuhan   │───────────────┘              │ Produksi_        │
-│  (Tujuan)   │                              │   Kendaraan      │
-└─────────────┘                              └──────────────────┘
-                                                      │
-┌──────────────────┐                                 │
-│ Tarif_Penumpang  │                                 │
-└──────────────────┘                                 │
-        │                                            │
-        │                                            │
-┌──────────────────┐                    ┌──────────────────────┐
-│ Kategori_        │                    │ Golongan_            │
-│   Penumpang      │                    │   Kendaraan          │
-└──────────────────┘                    └──────────────────────┘
-                                                      │
-                                                      │
-                                        ┌──────────────────────┐
-                                        │ Tarif_Kendaraan      │
-                                        └──────────────────────┘
-```
-
 ## Table Schemas
 
 ### 1. users
