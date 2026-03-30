@@ -1,0 +1,1184 @@
+{
+  "info": {
+    "name": "ASDP Production System API",
+    "description": "Sistem Informasi Produksi ASDP - API Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"operator1\",\n  \"password\": \"password123\",\n  \"nama_lengkap\": \"Operator Test\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/register",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"operator1\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/login",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/auth/users",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "auth",
+                "users"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get User By ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/auth/users/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "auth",
+                "users",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Perusahaan",
+      "item": [
+        {
+          "name": "Get All Perusahaan",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/master-data/perusahaan",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "perusahaan"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Perusahaan By ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/master-data/perusahaan/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "perusahaan",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Perusahaan",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nama_perusahaan\": \"PT ASDP Indonesia Ferry\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/master-data/perusahaan",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "perusahaan"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Perusahaan",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nama_perusahaan\": \"PT ASDP Updated\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/master-data/perusahaan/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "perusahaan",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Perusahaan",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/master-data/perusahaan/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "perusahaan",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Kapal",
+      "item": [
+        {
+          "name": "Get All Kapal",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/master-data/kapal",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "kapal"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Kapal By Perusahaan",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/master-data/kapal/perusahaan/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "kapal",
+                "perusahaan",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Kapal By ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/master-data/kapal/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "kapal",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Kapal",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"perusahaan_id\": 1,\n  \"nama_kapal\": \"KM Dharma Rucitra\",\n  \"berat_kapal\": 5000.50\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/master-data/kapal",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "kapal"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Kapal",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nama_kapal\": \"KM Dharma Rucitra Updated\",\n  \"berat_kapal\": 5100.00\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/master-data/kapal/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "kapal",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Kapal",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/master-data/kapal/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "kapal",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Pelabuhan",
+      "item": [
+        {
+          "name": "Get All Pelabuhan",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/master-data/pelabuhan",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "pelabuhan"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Pelabuhan By ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/master-data/pelabuhan/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "pelabuhan",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Pelabuhan",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nama_pelabuhan\": \"Pelabuhan Lembar\",\n  \"lokasi\": \"Lombok, NTB\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/master-data/pelabuhan",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "pelabuhan"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Pelabuhan",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nama_pelabuhan\": \"Pelabuhan Lembar Updated\",\n  \"lokasi\": \"Lombok - NTB\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/master-data/pelabuhan/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "pelabuhan",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Pelabuhan",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/master-data/pelabuhan/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "pelabuhan",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Rute",
+      "item": [
+        {
+          "name": "Get All Rute",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/master-data/rute",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "rute"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Rute By Pelabuhan Asal",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/master-data/rute/pelabuhan-asal/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "rute",
+                "pelabuhan-asal",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Rute By ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/master-data/rute/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "rute",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Rute",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pelabuhan_asal_id\": 1,\n  \"pelabuhan_tujuan_id\": 2,\n  \"nama_rute\": \"Mataram - Lembar\",\n  \"jarak\": 40.5\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/master-data/rute",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "rute"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Rute",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nama_rute\": \"Mataram - Lembar Updated\",\n  \"jarak\": 41.5\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/master-data/rute/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "rute",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Rute",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/master-data/rute/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "rute",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Tarif Penumpang",
+      "item": [
+        {
+          "name": "Get All Tarif Penumpang",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/master-data/tarif-penumpang",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "tarif-penumpang"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Tarif Penumpang By Rute",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/master-data/tarif-penumpang/rute/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "tarif-penumpang",
+                "rute",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Tarif Penumpang",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"rute_id\": 1,\n  \"kategori_penumpang_id\": 1,\n  \"tarif\": 150000\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/master-data/tarif-penumpang",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "tarif-penumpang"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Tarif Penumpang",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tarif\": 160000\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/master-data/tarif-penumpang/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "tarif-penumpang",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Tarif Penumpang",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/master-data/tarif-penumpang/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "tarif-penumpang",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Tarif Kendaraan",
+      "item": [
+        {
+          "name": "Get All Tarif Kendaraan",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/master-data/tarif-kendaraan",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "tarif-kendaraan"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Tarif Kendaraan By Rute",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/master-data/tarif-kendaraan/rute/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "tarif-kendaraan",
+                "rute",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Tarif Kendaraan",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"rute_id\": 1,\n  \"golongan_id\": 1,\n  \"tarif\": 500000\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/master-data/tarif-kendaraan",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "tarif-kendaraan"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Tarif Kendaraan",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tarif\": 520000\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/master-data/tarif-kendaraan/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "tarif-kendaraan",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Tarif Kendaraan",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/master-data/tarif-kendaraan/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "tarif-kendaraan",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Kategori & Golongan",
+      "item": [
+        {
+          "name": "Get All Kategori Penumpang",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/master-data/kategori-penumpang",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "kategori-penumpang"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get All Golongan Kendaraan",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/master-data/golongan-kendaraan",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "master-data",
+                "golongan-kendaraan"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Produksi",
+      "item": [
+        {
+          "name": "Get All Produksi",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/produksi?tanggal_dari=2026-02-10&tanggal_sampai=2026-02-17&shift=pagi",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "produksi"
+              ],
+              "query": [
+                {
+                  "key": "tanggal_dari",
+                  "value": "2026-02-10"
+                },
+                {
+                  "key": "tanggal_sampai",
+                  "value": "2026-02-17"
+                },
+                {
+                  "key": "shift",
+                  "value": "pagi"
+                },
+                {
+                  "key": "perusahaan_id",
+                  "value": "1",
+                  "disabled": true
+                },
+                {
+                  "key": "kapal_id",
+                  "value": "1",
+                  "disabled": true
+                },
+                {
+                  "key": "rute_id",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Produksi By ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/produksi/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "produksi",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Produksi",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"produksi\": {\n    \"perusahaan_id\": 1,\n    \"kapal_id\": 1,\n    \"pelabuhan_asal_id\": 1,\n    \"rute_id\": 1,\n    \"nama_perusahaan\": \"PT ASDP Indonesia Ferry\",\n    \"nama_kapal\": \"KM Dharma Rucitra\",\n    \"nama_pelabuhan_asal\": \"Pelabuhan Mataram\",\n    \"nama_pelabuhan_tujuan\": \"Pelabuhan Lembar\",\n    \"nama_rute\": \"Mataram - Lembar\",\n    \"tanggal_produksi\": \"2026-02-17\",\n    \"shift\": \"pagi\",\n    \"regu\": \"regu 1\"\n  },\n  \"penumpang\": [\n    {\n      \"kategori_penumpang_id\": 1,\n      \"nama_kategori\": \"Dewasa\",\n      \"jumlah\": 100,\n      \"tarif\": 150000,\n      \"subtotal\": 15000000,\n      \"is_tarif_custom\": false\n    },\n    {\n      \"kategori_penumpang_id\": 2,\n      \"nama_kategori\": \"Bayi\",\n      \"jumlah\": 5,\n      \"tarif\": 75000,\n      \"subtotal\": 375000,\n      \"is_tarif_custom\": false\n    }\n  ],\n  \"kendaraan\": [\n    {\n      \"golongan_id\": 1,\n      \"nomor_golongan\": 1,\n      \"tipe_muatan\": null,\n      \"jumlah\": 20,\n      \"tarif\": 500000,\n      \"subtotal\": 10000000,\n      \"is_tarif_custom\": false\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/produksi",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "produksi"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Produksi",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"produksi\": {\n    \"shift\": \"malam\",\n    \"regu\": \"regu 2\"\n  },\n  \"penumpang\": [\n    {\n      \"kategori_penumpang_id\": 1,\n      \"nama_kategori\": \"Dewasa\",\n      \"jumlah\": 120,\n      \"tarif\": 155000,\n      \"subtotal\": 18600000,\n      \"is_tarif_custom\": false\n    }\n  ],\n  \"kendaraan\": []\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/produksi/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "produksi",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Produksi",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/produksi/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "produksi",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:5000/api",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}
