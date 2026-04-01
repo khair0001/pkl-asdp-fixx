@@ -1914,7 +1914,10 @@ class LaporanKinerjaAsdpController {
         bOuter(2, 10, 5, 12, "thin");
 
         sc("B7", "CABANG", { bold: true, size: 14 });
-        sc("D7", `: ${pelabuhanAsal.toUpperCase()}`, { bold: true, size: 14 });
+        const cabangText = isGabunganSemua 
+          ? `${pelabuhanAsal.toUpperCase()} - ${pelabuhanTujuan.toUpperCase()} (PP)`
+          : `${pelabuhanAsal.toUpperCase()}`;
+        sc("D7", `: ${cabangText}`, { bold: true, size: 14 });
         sc("B8", "USAHA", { bold: true, size: 14 });
         sc("D8", ": BISNIS PENYEBERANGAN", { bold: true, size: 14 });
         sc("B9", "BULAN", { bold: true, size: 14 });
