@@ -10,14 +10,14 @@
 
           <!-- Banner image (full area) -->
           <img
-            src="/public/login_img.png"
+            src="/src/assets/login_img.png"
             class="absolute inset-0 w-full h-full object-cover object-center"
             alt="Banner"
           />
 
           <!-- Logo overlay — pojok kiri atas (desktop) / tengah atas (mobile) -->
           <div class="logo-wrap absolute top-0 left-0 z-20 px-8 pt-7">
-            <img src="/public/logo_asdp.png" alt="ASDP Logo" class="h-10 object-contain" />
+            <img src="/src/assets/logo_asdp.png" alt="ASDP Logo" class="h-10 object-contain" />
           </div>
 
           <!-- Title text overlay — pojok kiri bawah (desktop) / tengah bawah (mobile) -->

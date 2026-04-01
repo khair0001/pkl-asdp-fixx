@@ -107,12 +107,6 @@
       </div>
       <div class="flex justify-end space-x-2 mt-6">
         <button
-          @click="resetFilter"
-          class="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 font-medium"
-        >
-          Reset
-        </button>
-        <button
           @click="loadData"
           class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium"
         >
